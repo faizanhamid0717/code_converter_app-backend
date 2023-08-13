@@ -97,3 +97,5 @@ app.listen(8080, () => {
     console.log("server is running at 8080")
 }
 )
+
+module.export = app
