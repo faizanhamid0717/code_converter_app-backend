@@ -33,6 +33,7 @@ const codeGenerator = async (input, code) => {
 }
 
 
+
 app.post("/runCode", async (req, res) => {
     const { input } = req.body;
   
@@ -94,9 +95,14 @@ app.post("/qualityCheck", async (req, res) => {
     res.send(response)
 })
 
-app.listen(8080, () => {
-    console.log("server is running at 8080")
+app.get("/", (req, res) => {
+  res.send("Welcome to the API");
+});
+
+
+app.listen(process.env.PORT, () => {
+    console.log(`server is running at PORT ${process.env.PORT}`)
 }
 )
 
-module.export = app
+module.exports = app
